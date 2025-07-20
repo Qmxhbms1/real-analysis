@@ -1,0 +1,55 @@
+\section{The Real and Complex Number Systems}
+
+
+% Problem 1.1
+\begin{problem}
+If $r$ is rational ($r /neq 0$) and $x$ is irrational, prove that $x + r$ and $rx$ are irrational.
+\end{problem}
+
+\begin{solution}
+Suppose, for a contradiction, that $r + x$ was rational.
+Then we could write $r + x = \frac{p}{q}$, for some integers $p,q$.
+Since $r$ is rational we can write it as $\frac{a}{b}$ for some integers $a,b$.
+Now we know that $\frac{a}{b} + x = \frac{p}{q}$.
+Some algebra gives us $x=\frac{pb-ab}{qb}$.
+Since $a,b,p,q$ are integers, and integers are closed under addition and multiplication, we know that $x$ is rational, a contradiction.
+
+Similarly for multiplication we could show that $x=\frac{pb}{aq}$, which leads to the same contradiction.
+\end{solution}
+
+% Problem 1.2
+\begin{problem}
+Prove that there is no rational number whose square is 12.
+\end{problem}
+
+\begin{solution}
+Let's call the number whose square is $3$ "$\sqrt{3}$".
+If $\sqrt{3}$ is irrational then by exercise 1.1, $2 \cdot \sqrt{3}$ is also irrational, and $(2 \cdot \sqrt{3})^2 = 4 \cdot 3 = 12$.
+Let's assume, for a contradiction, that $\sqrt{3} = \frac{p}{q}$, for some $p,q \in \N$, such that $p,q$ are relatively prime.
+From there we can get $p^2 = 3 \cdot q^2$. This shows that $p^2$ is divisible by $3$, hence $p$ is divisible by 3. Now we can write $p = 3k$ and $p^2 = 9k^2$ for some $k \in \N$.
+Combining $p^2 = 3q^2$ and $p^2 = 9k^2$ we get $q^2 = 3k^2$, which implies that $q = 3r$, for some $r \in \N$.
+This contradicts our assumption that $p$ and $q$ are relatively prime.
+\end{solution}
+
+% Problem 1.3
+\begin{problem}
+Prove Proposition 1.15.
+
+The axioms for multiplication imply the following statements.
+\begin{enumerate}[label=(\alph*)]
+\item If $x \neq 0$ and $xy = xz$ then $y = z$.
+\item If $x \neq 0$ and $xy = x$ then $y = 1$.
+\item If $x \neq 0$ and $xy = 1$ then $y = \frac{1}{x}$.
+\item If $x \neq 0$ then $\frac{1}{\frac{1}{x}} = x$.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item \[y = y \cdot 1 = y \cdot (x \cdot \frac{1}{x}) = (y \cdot x) \cdot \frac{1}{x} = (x \cdot y) \cdot \frac{1}{x} = (x \cdot z) \cdot \frac{1}{x} = (z \cdot x) \cdot \frac{1}{x} = z \cdot (x \cdot \frac{1}{x}) = z \cdot 1 = z\].
+\item Follows directly from 1.15 (a) with $z = 1$.
+\item Follows directly from 1.15 (a) with $z = \frac{1}{x}$.
+\item From M5 $x \cdot \frac{1}{x} = 1$. From 1.15 (c) with $y = x$ we have $x = \frac{1}{\frac{1}{x}}$.
+\end{enumerate}
+\end{solution}
+
