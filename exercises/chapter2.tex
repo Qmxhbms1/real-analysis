@@ -75,3 +75,111 @@
   This set has a limit point only in zero, thus $A' = {0}$.
   Any finite set has no limit point, by Theorem 2.20.
 \end{solution}
+
+% Problem 2.11
+\setcounter{problem}{10}
+\begin{problem}
+  For $x \in \R^1$ and $y \in \R^1$, define
+  \[d_1(x, y) = (x - y)^2,\]
+  \[d_2(x, y) = \sqrt{|x - y|},\]
+  \[d_3(x, y) = |x^2 - y^2|,\]
+  \[d_4(x, y) = |x - 2y|,\]
+  \[d_5(x, y) = \frac{|x - y|}{1 + |x - y|}.\]
+  Determine, for each of these, whether it is a metric or not.
+\end{problem}
+
+\begin{solution}
+  $d_1$ satisfies 1) and 2) trivially, but fails 3) since $d_1(1, 3) > d_1(1, 2) + d_1(2, 3)$.
+  
+  $d_2$ satisfies all 3 conditions and is a metric.
+
+  $d_3$ fails 1) as we can have $d_3(x, -x) = 0$.
+
+  $d_4$ fails 1) as we have $d_4(x, x) \neq 0$ and $d_4(2x, x) = 0$.
+
+  $d_5$ satisfies all 3 conditions with some algebra, and is thus a metric.
+\end{solution}
+
+% Problem 2.12
+\begin{problem}
+  Let $K \subset \R^1$ consist of $0$ and the numbers $\frac{1}{n}$, for $n = 1, 2, 3, \ldots$.
+  Prove that $K$ is compact directly from the defintion.
+\end{problem}
+
+\begin{solution}
+  Let $K = \{0, 1, \frac{1}{2}, \frac{1}{3}, \ldots, \}$ and $\{G_{\alpha}\}$ be an open cover of $K$.
+  There must be some $\alpha_1$ such that $0 \in G_{\alpha_1}$.
+  Since $G_{\alpha_1}$ is open 0 must be an interior point, thus there exists $a, b \in \R$ where $a < 0 < b$. such that $(a, b) \subset G_{\alpha_1}$.
+  By Theorem 1.20(a), there exists a positive integer $N$ such that $Nb > 1$, i.e, $b > \frac{1}{N}$.
+  Therefore we have $\frac{1}{n} \in (a, b) \subset G_{\alpha_1}$ for all positive integers $n \ge N$.
+  We rewrite $K = \{1, \frac{1}{2}, \ldots, \frac{1}{N - 1}\} \cup \{0, \frac{1}{N}, \frac{1}{N + 1}, \ldots\}$.
+  We have already shown that $\{0, \frac{1}{N}, \frac{1}{N + 1}, \ldots\} \subset G_{\alpha_1}$.
+  In addition, since $\{1, \frac{1}{2}, \ldots, \frac{1}{N - 1}\}$ is finite set, there are finitely many $G_{\alpha_2}, G_{\alpha_3}, \ldots, G_{\alpha_m}$ such that
+  \[\{1, \frac{1}{2}, \ldots, \frac{1}{N - 1}\} \subset G_{\alpha_2} \cup G_{\alpha_3} \cup \ldots \cup G_{\alpha_m}.\]
+  Hence we have
+  \[K \subset \bigcup_{i = 1}^{m} G_{\alpha_i},\]
+  i.e., K is compact by Definition 2.32.
+\end{solution}
+
+% Problem 2.13
+\begin{problem}
+  Construct a compact set of real numbers whose limit points form a countable set.
+\end{problem}
+
+\begin{solution}
+  We want a closed, bounded set with countably many limit points.
+  Consider a set $K \subset \R^2$ such that it contains all points $x = (\frac{1}{p}, \frac{1}{q})$ for $n \in \N$.
+  Since this set is clearly bounded and it's limit points are $x = (\frac{1}{k}, 0)$ and $x = (0, \frac{1}{k})$.
+  It is also closed, hence by Heine-Borel Theorem $K$ is compact.
+  The set of all numbers $\frac{1}{k}$ is an infinite subset of $\Q$, hence it is countable.
+  The union of two countable sets is countable by Theorem 2.12.
+  Thus $K$ is a compact set with countably many limit points, as desired.
+\end{solution}
+
+% Problem 2.14
+\begin{problem}
+  Give an example of an open cover of the segment (0, 1) which has no finite subcover.
+\end{problem}
+
+\begin{solution}
+  Let $G_{\alpha}$ be an open set around $\frac{1}{\alpha}$ with radius $\frac{1}{\alpha + 1}$.
+  The set $\{G_{\alpha}$ is an open cover of $(0, 1)$ because for any $x \in (0, 1)$ we can find a number $n$ such that $\frac{1}{n + 1} < x < \frac{1}{n}$ (By the Archimeaden property of $\R$), and clearly $x \in G_n$.
+  If we removed any $G_{\alpha}$ from this set we would be missing the number $\frac{1}{\alpha}$ in our cover.
+\end{solution}
+
+% Problem 2.15
+\begin{problem}
+  Show that Theorem 2.36 and its Corollary become false if the word "compact" is replaced by "closed" or by "bounded".
+\end{problem}
+
+\begin{solution}
+  If we replaced the word "compact" by "bounded" we have the following.
+
+  Consider the collection of sets $(0, \frac{1}{n})$ for $n = 1, 2, \ldots$.
+  These sets are bounded by $0$ and $1$, and for whichever finite collection of sets we choose we can choose the biggest $n$, and any point in that set will be in the intersection of all our sets.
+  However, if there was an $x$ in the intersection of all our sets, we could simply find an $n$ such that $\frac{1}{n} < x$ (By the Archimeaden property of $\R$) and thus $x \notin (0, \frac{1}{n})$ and can't be in the intersection.
+
+
+  If we replaced the word "compact" by "closed".
+
+  Consider all intervals $[0, n]$ for $n \in \N$.
+  The argument is analogous.
+\end{solution}
+
+% Problem 2.16
+\begin{problem}
+  Regard $\Q$, the set of all rational numbers, as a metric space, with $d(x, y) = |p - q|$.
+  Let $E$ be the set of all $p \in \Q$ such that $2 < p^2 < 3$.
+  Show that $E$ is closed and bounded in $\Q$, but that $E$ is not compact.
+  Is $E$ open in $\Q$?
+\end{problem}
+
+\begin{solution}
+  With some simple algebra we arrive at $E = \{p \in \Q | p \in (-\sqrt{3}, -\sqrt{2}) \cup (\sqrt{2}, \sqrt{3})\}$.
+  This set is clearly bounded.
+  It is also both open and closed.
+  It's obvious that all points are interior points and the same goes for its complement.
+  Consider the cover $\{G_{\alpha}\} \cup \{G_{\beta}\}$, where $G_{\alpha}$ is defined as in exercise 2.14, except it goes from $x \in (\sqrt{2}, \sqrt{2} + \frac{1}{\alpha})$.
+  Similarly, $G_{\beta}$ is the cover defined with $x \in (-\sqrt{3} + \frac{1}{\alpha}, \sqrt{2})$.
+  The set is not compact with the same argument as in exercise 2.14.
+\end{solution}
