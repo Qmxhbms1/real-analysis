@@ -1,0 +1,77 @@
+\section{Basic Topology}
+
+% Problem 2.2
+\setcounter{problem}{1}
+\begin{problem}
+  A complex number $z$ is said to be \textit{algebreic} if there are integers $\alpha_0, \ldots, \alpha_n$, not all zero such that
+  \[\alpha_0z^n + \alpha_1z^{n - 1} + \ldots + \alpha_{n - 1}z + \alpha_n = 0.\]
+  Prove that the set of all algebreic numbers is countable.
+\end{problem}
+
+\begin{solution}
+  Let $P_n$ be the set of all polynomials with integers coefficants with degree less than or equal to $n$.
+  Each polynomial is uniquely determined by it's coefficants, so it is clear that $f(\alpha_0z^n + \ldots + \alpha_n) = (\alpha_0, \alpha_1, \ldots, \alpha_n)$ is a bijection.
+  By Theorem 2.13 it is clear that the set $P_n$ is countable.
+  Let $B_{p(z)}$ be the set of all roots of the polynomial $p(z)$.
+  Since a polynomial of degree $n$ has at most $n$ roots, $B_{p(z)}$ is finite.
+  Then we know that $S = \bigcup_{p(z) \in P_n} B_{p(z)}$ is at most countable by Theorem 2.12.
+  Since all of the integers are algebreic numbers we know that $S$ is infinite and thus countable.
+\end{solution}
+
+% Problem 2.3
+\begin{problem}
+  Prove that there exist real numbers which are not algebreic.
+\end{problem}
+
+\begin{solution}
+  If all real numbers were algebreic then clearly the set of all real numbers would be a subset of the set of all algebreic numbers.
+  Since, by Theorem 2.8, every infinite subset of the set of algebreic numbers would be countable, then the set of all real numbers must be countable.
+  This contradicts Theorem 2.14, thus there must exist real numbers that are not algebreic.
+\end{solution}
+
+% Problem 2.4
+\begin{problem}
+  Is the set of all irrational real numbers countable?
+\end{problem}
+
+\begin{solution}
+  Suppose the set of all irrational numbers was countable.
+  Since we know that the set of all rationals is countable, then their union must also be countable; by a weaker Theorem 2.12.
+  However, we know that the union of the set of irrational numbers and the set of rational numbers is simply the set of real numbers.
+  We also know by Theorem 2.14 that the set of real numbers is uncountable.
+  Thus we arrive at a contradiction, and the set of irrational numbers cannot be countable.
+\end{solution}
+
+% Problem 2.5
+\begin{problem}
+  Construct a bounded set of real numbers with exactly three limit points.
+\end{problem}
+
+\begin{solution}
+  Consider the set $S$ that is the union of the set $A = \{q \in \Q | q = \frac{1}{n}, \in \N\}$, $B = \{q \in \Q | q = \frac{1}{n} + 1, \in \N\}$ and $C = \{q \in \Q | q = \frac{1}{n} + 2, \in \N\}$.
+  The set is clearly bounded and contains only 3 limit points: $0, 1, 2$.
+\end{solution}
+
+% Problem 2.6
+\begin{problem}
+  Let $E'$ be the set of all limit points of a set $E$.
+  Prove that $E'$ is closed.
+  Prove that $E$ and $\overline{E}$ have the same limit points.
+  Do $E$ and $E'$ always have the same limit points?
+\end{problem}
+
+\begin{solution}
+  Suppose that $E'$ is the set of all limit points of some set $E$.
+  We wish to show that any limit point of $E'$ is also a limit point of $E$.
+  Let $x$ be a limit point of $E'$.
+  Then for any neighborhood $Nr(x)$ there is some $p \neq x$ that is in $E'$.
+  Consider the neighborhood of $p$ with radius $r - d(x, p)$.
+  There must be some $s \in E$ in the neighborhood.
+  Then $d(x, s) \le d(x, p) + d(p, s) < d(x, p) + r - d(x, p)$.
+  Hence $s \in Nr(x)$ and $x$ is a limit point of $E'$.
+  A similar argument works for $E$ and $\overline{E}$ having the same limit points.
+  $E$ and $E'$ obviously do not always have the same limit points.
+  Consider the set $A = \{q \in \Q | q = \frac{1}{n}, n \in \N\}$.
+  This set has a limit point only in zero, thus $A' = {0}$.
+  Any finite set has no limit point, by Theorem 2.20.
+\end{solution}
