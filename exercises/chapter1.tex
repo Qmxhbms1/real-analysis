@@ -186,3 +186,36 @@
   Clearly the right side is, by the binomial theorem, equal to $(|z_1| + |z_2| + \ldots + |z_n|)^2$.
   Taking the roots not gives us $|z_1 + z_2 + \ldots + z_n| \le |z_1| + |z_2| + \ldots |z_n|$, as desired.
 \end{solution}
+
+% Problem 1.15
+\setcounter{problem}{14}
+\begin{problem}
+  Under what conditions does equality hold in the Schwarz inequality.
+\end{problem}
+
+\begin{solution}
+  By the proof of the Schwarz inequality, the equality $AB = |C|^2$ clearly implies $\sum_{j = 1}^{n} |Ba_j - Cb_j|^2 = 0$, i.e.,
+  \[|Ba_j - Cb_j|^2 = 0;\]
+  \[(Ba_j - Cb_j)(\overline{Ba_j} - \overline{Cb_j}) = 0;\]
+  \[B^2|a_j|^2 + C^2|b_j|^2 - 2BCRe(a_jb_j) = 0;\]
+  \[0 \ge (B|a_j| - C|b_j|)^2;\]
+  Hence we have the equality hold if and only if $B|a_j| = C|b_j|$ if and only if $\frac{|a_j|}{|b_j|}$ is a constant for all $1 \le j \le n$.
+\end{solution}
+
+% Problem 1.20
+\setcounter{problem}{19}
+\begin{problem}
+  With reference to the Appendix, suppose that property (III) were ommited from the definition of a cut.
+  Keep the same definitions of order and addition.
+  Show that the resulting ordered set has the least upper bound property, that addition satisfies axioms (A1) to (A4) (with a slightly different zero-element!) but fails (A5) fails.
+\end{problem}
+
+\begin{solution}
+  Completness and A1-A3 are trivially the same proofs.
+  A4 can also be shown easily with $0^* = {p \in \Q | p \le 0}$.
+  We will now show that A5 is false.
+
+  Since $0^*$ has the largest member of 0 we know that our $\alpha + (-\alpha)$ must also have the largest member of $0$.
+  Pick $\alpha$ such that it has no largest member.
+  If $\alpha + (-\alpha)$ had a largest member $x = r + s$, where $r \in \alpha$ and $s \in -\alpha$ then there would be a $p \in \alpha$ such that $p > r$ and $p + s > r + s \in \alpha + (-\alpha)$, a contradiction.
+\end{solution}
