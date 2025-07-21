@@ -57,3 +57,87 @@
   \end{enumerate}
 \end{problem}
 
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Consider
+      \[x_{n + 1} - x_n = \frac{1}{2}(x_n + \frac{\alpha}{x_n}) - x_n = \frac{x_n^2 + \alpha}{2x_n} - x_n = \frac{\alpha - x_n^2}{2x_n}\]
+      We can inductively show that $x_n > \sqrt{\alpha}$ for all $n \in \N$.
+      Hence our above equation is always negative and the sequence is monotonically decreasing.
+      Since we know that it is bounded from below by $\sqrt{\alpha}$, by the Monotone convergence theorem we know that $\{x_n\}$ converges.
+      Let $\lim_{n\to\infty} x_n = x$.
+      Consider our relation
+      \[x_{n + 1} = \frac{1}{2} (x_n + \frac{\alpha}{x_n}).\]
+      We can take the limit of both sides to get
+      \[\lim_{n\to\infty} x_{n + 1} = \lim_{n\to\infty} \frac{1}{2} (x_n + \frac{\alpha}{x_n}).\]
+      Since $\lim x_n = \lim x_{n + 1}$, and using some properties of limits we get
+      \[x = \frac{x}{2} + \frac{\alpha}{x}.\]
+      Which with some simple algebra gets us
+      \[x = \sqrt{\alpha}.\]
+    \item We have the following
+      \[\epsilon_{n + 1} = x_{n + 1} - \sqrt{\alpha} = \frac{1}{2}(x_n + \frac{\alpha}{x_n}) - \sqrt{\alpha} = \frac{x_n^2 + \alpha}{2x_n} - \sqrt{\alpha} = \frac{x_n^2 + \alpha - 2x_n\sqrt{\alpha}} = \frac{(x_n - \sqrt{\alpha})^2}{2x_n} = \frac{\epsilon_n^2}{2x_n} < \frac{\epsilon_n^2}{2\sqrt{\alpha}}.\]
+    \item Simply put $\beta = 2\sqrt{3}$ and $\epsilon_1 = 2 - \sqrt{3}$.
+      It is clear that $\frac{2 - \sqrt{3}}{2\sqrt{3}} < \frac{1}{10}$.
+      Hence $\epsilon_5 < 2\sqrt{3} \cdot 10^{-16} < 4 \cdot 10^{-16}.$
+      Similarly we get $\epsilon_6 < 4 \cdot 10^{-32}.$
+  \end{enumerate}
+\end{solution}
+
+% Problem 3.17
+\begin{problem}
+  Fix $\alpha > 1$.
+  Take $x_1 > \sqrt{\alpha}$, and define
+  \[x_{n + 1} = \frac{\alpha = x_n}{1 + x_n} = x_n + \frac{\alpha - x_n^2}{1 + x_n}.\]
+  \begin{enumerate}[label=(\alph*)]
+    \item Prove that $x_1 > x_3 > x_5 > \ldots$.
+    \item Prove that $x_2 < x_4 < x_6 < \ldots$.
+    \item Prove that $\lim x_n = \sqrt{\alpha}$.
+    \item Compare the rapidity of convergence of this process with the one described in Exercise 16.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item Consider $x_{2n - 1} - x_{2n + 1}$.
+      Using the recursion formula twice and some algebra we arrive at the following
+      \[x_{2n - 1} - x_{2n + 1} = \frac{2(x_{2n - 1}^2 - \alpha)}{1 + 2x_{2n - 1} + \alpha}.\]
+      We can easily see by induction that $x_{2n - 1} > \sqrt{\alpha}$ for all $n \in \N$.
+      Combining this with our previous equation we can clearly see that
+      \[x_{2n - 1} - x_{2n + 1} > 0,\]
+      hence $x_1 > x_3 > x_5 > \ldots$.
+    \item The same equation holds in this case except with $x_{2n}$ and $x_{2n - 2}$.
+      We can again inductively show that $x_2n < \sqrt{\alpha}$ for all $n \in \N$.
+      Thus we get $x_{2n} > x_{2n - 2}$.
+    \item Consider the relation derived from our relations in a) and b), $x_{2n} = x_{2n + 2} + \frac{(1 + \alpha)x_{2n} + 2\alpha}{1 + 2x_{2n} + \alpha}$.
+      It is clear that everything on the right side converges so we can take the limits of both sides and apply the properties of limits to get
+      \[x = \frac{(1 + \alpha)x + 2\alpha}{1 + 2x + \alpha}\].
+      Some simple algebra finally leads us to $x = \sqrt{\alpha}$, hence $\lim x_{2n} = \sqrt{\alpha}$
+      We can completely analogously show that $\lim x_{2n - 1} = \sqrt{\alpha}$.
+      Notice that $\lim x_{2n} - x_{2n - 1} = 0$, hence the sequence is Cauchy and thus convergent.
+      Let $\lim x_n = x$.
+      We know that every subsequence of $\{x_n\}$ converges to $x$ as well.
+      Hence $\{x_{2n}\}$ must also converge to $x$.
+      By the uniqueness of limit points we have $\lim x_{2n} = \sqrt{\alpha} = x$ and thus $x = \sqrt{\alpha}$.
+    \item Let $\epsilon_n = x_n - \sqrt{\alpha}$.
+      Some simple algebra shows us that $\epsilon_{2n} \sim (\frac{1 - sqrt{\alpha}}{1 + \sqrt{\alpha}})^2 \cdot \epsilon_{2n - 2}$.
+      Similarly we get $\epsilon_{2n - 1} \sim (\frac{1 - sqrt{\alpha}}{1 + \sqrt{\alpha}})^2 \cdot \epsilon_{2n - 3}$.
+      These converge linearly, while the sequence in exercise 16. converged quadratically.
+  \end{enumerate}
+\end{solution}
+
+% Problem 3.20
+\setcounter{problem}{19}
+\begin{problem}
+  Suppose $\{p_n\}$ is a Cauchy sequence in a metric space $X$, and some subsequence $\{p_{n_i}\}$ converges to a point $p \in X$.
+  Prove that the full sequence $\{p_n\}$ converges to $p$.
+\end{problem}
+
+\begin{solution}
+  Let $\{p_n\}$ be a Cauchy sequence in a metric space $X$ and let $\{p_{n_i}\}$ be a subsequence that converges to some $p \in X$.
+  Pick an $\epsilon$-neighborhood around $p$.
+  For a contradiction, assume $\{p_n\}$ does not converge to $p$, i.e., for any neighborhood of $p$ there are infinitely many points of $\{p_n\}$ outside of the neighborhood.
+  Now pick a point of $\{p_{n}\}$ in our neighborhood such that $n > N$ (Where $N$ is the integer such that $n > N$ and $m > N$ imply $d(p_n, p_m) < \epsilon$).
+  This is possible since most points of $\{p_{n_i}\}$ are in this neighborhood.
+  Call this point $p_n$ and consider the neighborhood around $p_n$ with radius $\epsilon - d(p, p_n)$.
+  Note that this is a subset of our $\epsilon$-neighborhood.
+  Since $\{p_n\}$ is a Cauchy sequence, there are only finitely many points outside this $\epsilon$-neighborhood, a contradiciton.
+\end{solution}
