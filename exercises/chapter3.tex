@@ -141,3 +141,25 @@
   Note that this is a subset of our $\epsilon$-neighborhood.
   Since $\{p_n\}$ is a Cauchy sequence, there are only finitely many points outside this $\epsilon$-neighborhood, a contradiciton.
 \end{solution}
+
+% Problem 3.21
+\begin{problem}
+  Prove the following analogue of Theorem 3.10(b): If $\{E_n\}$ is a sequence of closed nonempty and bounded sets in a complete metric splace $X$, if $E_{n+1} \subset E_n$, and if 
+  \[\lim_{\n to \infty} diam E_n = 0.\]
+  then $\bigcap_1^{\infty} E_n$ consists of exactly one point.
+\end{problem}
+
+\begin{solution}
+  We just need to show that $\bigcap E_n$ is nonempty, the rest is identical as in Theorem 3.10(b).
+
+  First, we remove all duplicates, so that $E_{n + 1}$ is a proper subset of $E_n$.
+  Note that this does not change the intersection in any way, nor does it change that $\lim_{n \to \infty} diam E_n = 0$.
+  Now, for every $n$ pick a $p_n \in E_n$, such that $p_n \notin E_{n + 1}$ and $p_n \notin E_{n - 1}$.
+  Let $G_n \subset E_n$ such that $G_n = \{p_n, p_{n + 1}, p_{n + 2}, \ldots\}$.
+  Since $G_n \subset E_n$, clearly $diam G_n \le diam E_n$, hence $\lim diam G_n = 0$.
+  Thus, $\{p_n\}$ is a Cauchy sequence, and since $X$ is a complete metric space, $\{p_n\}$ converges to some point $p$.
+  Since every $E_n$ is closed, if $p \notin E_i$ for some $i \in \N$, then $p$ is not a limit point of $E_i$.
+  However, since the sequence of points $\{p_n\}$ starting from $i$ converges to $p$, clearly $p$ is a limit point of $E_i$, a contradiction.
+  Thus for every $n \in N$, $p \in E_n$, and finally $p \in \bigcup E_n$.
+\end{solution}
+
