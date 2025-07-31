@@ -190,4 +190,25 @@
   Finally, we can conclude that $\bigcup G_n$ is nonempty.
 \end{solution}
 
+% Problem 3.23
+\begin{problem}
+  Suppose $\{p_n\}$ and $\{q_n\}$ are Cauchy sequences in a metric space $X$.
+  Show that the sequence $\{d(p_n, q_n)\}$ converges.
+\end{problem}
+
+\begin{solution}
+  Let $\epsilon > 0$ be given.
+  Since $\{p_n\}$ and $\{q_n\}$ are Cauchy, there exist $N_1, N_2 \in \N$ such that $m, n > N_1$ implies $d(p_n, p_m) < \frac{\epsilon}{2}$, and similarly $m, n > N_2$ implies $d(q_n, q_m) < \frac{\epsilon}{2}$.
+  Put $N = max(N_1, N_2)$.
+  Now we have $m, n > N$ implies both $d(p_n, p_m) < \frac{\epsilon}{2}$ and $d(q_n, q_m) < \frac{\epsilon}{2}$.
+  By the triangle inequality we have the following:
+  \[d(p_n, q_n) \le d(p_n, p_m) + d(p_m, q_m) + d(q_m, q_n).\]
+  Which gives us
+  \[d(p_n, q_n) - d_(p_m, q_m) \le d(p_n, p_m) + d(q_n, q_m).\]
+  Completely analogously we can get
+  \[d(p_m, q_m) - d(p_n, q_n) \le d(p_n, p_m) + d(q_n, q_m).\]
+  Hence
+  \[|d(p_n, q_n) - d(p_m, q_m)| \le d(p_n, p_m) + d(q_n, q_m) < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.\]
+  Thus the sequence $\{d(p_n, q_n)\}$ is Cauchy, and since $\R$ with the standard metric is a complete metric space, $\{d(p_n, q_n)\}$ converges.
+\end{solution}
 
