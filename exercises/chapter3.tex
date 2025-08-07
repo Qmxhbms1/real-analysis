@@ -39,6 +39,27 @@
   Hence $\{s_n\}$ is convergent, and $s_n < 2$ for $n = 1, 2, 3, \ldots$.
 \end{solution}
 
+% Problem 3.4
+\begin{problem}
+  Find the upper and lower limits of the sequence $\{s_n\}$ defined by
+  \[s_1 = 0;\quad s_{2m} = \frac{s_{2m - 1}}{2};\quad s_{2m + 1} = \frac{1}{2} + s_{2m}.\]
+\end{problem}
+
+\begin{solution}
+  The subsequence $\{s_{2n + 1}\}$ has the recursion relation $s_{m + 1} = \frac{1 + s_m}{2}$, where $m = 2n$ for any $n \in \N$.
+  From here we can solve the recurrence relation and get $s_{m} = 1 - \frac{1}{2^{m - 1}}$.
+  It is clear to see that this sequence is monotonically increasing and converges to $1$.
+  Since it monotonically increases it is clear for every odd $n$ we have $s_{2n + 1} > s_n$.
+  If $n$ is even then it is still fairly clear that $s_{2n + 1} > s_{n + 1} > s_{n}$.
+  Thus for ever $n$ the subsequence $\{s_{2n + 1}\}$ is greater than or equal to $\{s_n\}$.
+  By theorem 3.19 this implies that the $\lim\sup_{n \to \infty} s_n \le \lim\sup_{n \to \infty} s_{2n + 1}$.
+  However since $s_{2n + 1}$ is a subsequence of $s_n$ it is clear that it's upper limit $\lim\sup_{n \to \infty} s_{2n + 1} \le \lim\sup_{n \to \infty} s_{n}$.
+  Thus $\lim\sup_{n \to \infty} s_{2n + 1} = \lim\sup_{n \to \infty} s_{n}$.
+  Since $s_{2n + 1}$ converges to $1$ it is clear that $\lim\sup_{n \to \infty} s_{2n + 1} = 1$, and $\lim\sup_{n \to \infty} s_{n} = 1$.
+
+  Using a similar argument we can show that $\lim\inf_{n \to \infty} s_{n} = \lim\inf_{n \to \infty} s_{2n} = \frac{1}{2}$.
+\end{solution}
+
 % Problem 3.16
 \setcounter{problem}{15}
 \begin{problem}
