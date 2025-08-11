@@ -60,6 +60,21 @@
   Using a similar argument we can show that $\lim\inf_{n \to \infty} s_{n} = \lim\inf_{n \to \infty} s_{2n} = \frac{1}{2}$.
 \end{solution}
 
+%Problem 3.5
+\begin{problem}
+  For any two real sequences $\{a_n\}$, $\{b_n\}$, prove that
+  \[\lim\sup_{n \to \infty} (a_n + b_n) \le \lim\sup_{n \to \infty} a_n + \lim\sup_{n \to \infty} b_n,\]
+  Provided the sum on the right is not of the form $\infty - \infty$.
+\end{problem}
+
+\begin{solution}
+  In the case of $sup E_a, sup E_b \in \R$, we use the more general result that states
+  \[sup(A + B) \le sup A + sub B.\]
+  If one or both are positive infinity, with the other either being positive infinite or a real number, then both sides are equal to positive infinity.
+  Similarly if one or both are negative infinity.
+  Since we have excluded the case of $\infty - \infty$, these are all the posibilites and in all of the the stated theorem holds.
+\end{solution}
+
 % Problem 3.16
 \setcounter{problem}{15}
 \begin{problem}
