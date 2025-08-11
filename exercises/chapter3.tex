@@ -75,6 +75,32 @@
   Since we have excluded the case of $\infty - \infty$, these are all the posibilites and in all of the the stated theorem holds.
 \end{solution}
 
+%Problem 3.6
+\begin{problem}
+  Investigate the behavior (convergence or divergence) of $\sum a_n$ if
+  \begin{enumerate}[label=(\alph*)]
+    \item $a_n = \sqrt{n + 1} - \sqrt{n}$;
+    \item $a_n = \frac{\sqrt{n + 1} - \sqrt{n}}{n}$;
+    \item $a_n = (\sqrt[n]{n} - 1)^n$;
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item If we consider a general partial sum we see that we have a telescoping sum.
+      Thus we get $\sum_{n = 1}^m a_n = \sqrt{m + 1} - 1$.
+      Since the square root function diverges, so do these partial sums.
+      Hence the $\lim \sum_{n = 1}^{m} a_n = + \infty$.
+    \item Consider the following
+      \[\frac{\sqrt{n + 1} - \sqrt{n}}{n} = \frac{1}{n (\sqrt{n + 1} + \sqrt{n})} \le \frac{1}{2 \sqrt[3]{n}} \le \frac{1}{2 n}.\]
+      Since we know that the series of the reciprocals of even numbers converges, by theorem 3.25, so does our series.
+    \item By induction we can show that $\frac{3}{2}^n > n$.
+      From here it follows that $\sqrt[n]{n} - 1 < \frac{1}{2}$.
+      Thus we see that each element of our series is less than the corresponing power of 2.
+      Since the geometric series of powers of 2 converges, so does our series.
+  \end{enumerate}
+\end{solution}
+
 % Problem 3.16
 \setcounter{problem}{15}
 \begin{problem}
