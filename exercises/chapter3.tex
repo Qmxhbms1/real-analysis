@@ -101,6 +101,62 @@
   \end{enumerate}
 \end{solution}
 
+% Problem 3.14
+\setcounter{problem}{13}
+\begin{problem}
+  If $\{s_n\}$ is a complex sequence, define its arithmetic means $\sigma_n$ by
+  \[\sigma_n = \frac{s_0 + s_1 + \ldots + s_n}{n + 1} \quad (n = 0, 1, 2, \ldots).\]
+  \begin{enumerate}[label=(\alph*)]
+    \item If $\lim s_n = s$, prove that $\lim \sigma_n = s$.
+    \item Construct a sequence $\{s_n\}$ which does not converge, although $\lim \sigma_n = 0$.
+    \item Can it happen that $s_n > 0$ for all $n$ and that $\lim\sup s_n = \infty$, although $\lim \sigma_n = 0$?
+    \item Put $a_n = s_n - s_{n-1}$, for $n \ge 1$.
+      Show that
+      \[s_n - \sigma_n = \frac{1}{n + 1} \sum_{k = 1}^{n} k a_k .\]
+      Assume that $\lim (na_n) = 0$ and that $\{\sigma_n\}$ converges.
+      Prove that $\{s_n\}$ converges.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item It is clear that $\lim s_n - s = 0$, thus we know that for any $\epsilon > 0$ there exists an $N$ such that $|s_n - s| < \frac{\epsilon}{2}$ for every $n > N$.
+      We will consider $\sigma_n - s$.
+      We easily get $\sigma_n - s = \sum_{k = 0}^{n} \frac{s_k - s}{n + 1}$.
+      Now, pick an $\epsilon > 0$.
+      Then, clearly $|\frac{s_n - s}{n + 1}| < \frac{\epsilon}{n + 1}$.
+      Now let us consider any $\{\sigma_n - s\}$ for $n > N$.
+      Then we have $|\sum_{k = 0}^{N} \frac{s_k - s}{n + 1} + \sum_{k = N + 1}^{n} \frac{s_k - s}{n + 1}| < |\sum_{k = 0}^{N} \frac{s_k - s}{n + 1}| + \frac{n - N + 1}{n + 1} \frac{\epsilon}{2}$.
+      We clearly see that $\frac{n - N + 1}{n + 1} > 1$, hence $\frac{n - N + 1}{n + 1} \frac{\epsilon}{2} < \frac{\epsilon}{2}$.
+      The finite sum $\sum_{k = 0}^{N} \frac{s_k - s}{n + 1}$ is bounded by $M = max(|s_i - s|)$.
+      Thus the entire series is bounded and thus converges.
+    \item Consider the oscillating sequence $s_n = (-1)^n$.
+      This sequence clearly does not converge.
+      Now consider $\sigma_n$.
+      For an odd $n$ we will have $\sigma_n = 0$ and for an even $n$ we have $\sigma_n = \frac{1}{n + 1}$.
+      Since both of these subsequences converge to $0$, it follows that the whole sequence $\sigma_n$ converges to $0$.
+    \item Consider the sequence defined by 
+      \[s_n = \begin{cases}
+      k \quad \text{if } n = 2^k \text{ for some integer } k > 1\\
+      \frac{1}{n} \quad \text{otherwise}
+      \end{cases}\]
+      The subsequence $s_{2^k}$ is just a linear function which goes to infinity, thus the limit superior diverges to infinity.
+      It is also trivial to see that $s_n > 0$ for all $n$.
+      To show that the arithmetic mean converges we split it into two sums.
+      \[\sigma_n = \sum_{i = 1, i = 2^k}^{n} s_i + \sum_{i = 1, i \neq 2^k}^{n} s_i.\]
+      The first sum is approximately equal to $\frac{(\log_2 n)^2}{2n}$, which converges to $0$, as is easily shown using L'Hopital's rule.
+      The second sum is strictly less than the harmonic series divided by $n$.
+      Since the harmonic series grows approximately equal to the logarithmic function we can also show that this sum converges to $0$.
+    \item We have
+      \[s_n - \sigma_n = \frac{\sum_{k = 0}^{n} s_n}{n + 1} - \sigma_n = \frac{1}{n + 1} \sum_{k = 0}^{n} s_n - s_k.\]
+      It is simply to see that $\sum_{k = 0}^{n} s_n - s_k = \sum_{k = 1}^{n} k a_k$, as the right side is a telescoping sequence that trivially evaluates to the left side.
+      Thus
+      \[s_n - \sigma_n = \frac{1}{n + 1} \sum_{k = 1}^{n} k a_k.\] 
+      Since $(n a_n)$ converges to $0$, it follows by a) that $s_n - \sigma_n$ converges to $0$.
+      Thus by the properties of limits, it follows that $s_n$ must also converge since $\sigma_n$ converges.
+  \end{enumerate}
+\end{solution}
+
 % Problem 3.16
 \setcounter{problem}{15}
 \begin{problem}
@@ -186,8 +242,24 @@
   \end{enumerate}
 \end{solution}
 
+% Problem 3.19
+\setcounter{problem}{18}
+\begin{problem}
+  Associate to each sequence $a = \{\alpha_n\}$, in which $\alpha_n$ is $0$ or $2$, the real number
+  \[x(a) = \sum_{n = 1}^{\infty} \frac{\alpha_n}{3^n}.\]
+  Prove that the set of all $x(a)$ is precisely the Cantor set described in Sec. 2.44.
+\end{problem}
+
+\begin{solution}
+  It is clear from the construction of the Cantor set that it is precisely the set of numbers whose ternary expansion contains no $1$'s.
+  If $x$ is a real number in the interval $(0, 1)$, we can see that if it is in the Cantor set it can be represented as some $x(a)$.
+  Simply at every step, choose in which of the remaining thirds it belongs to.
+  Any number of the form $x(a)$ will never be removed from the Cantor set, as it would have to be removed at some step $n$.
+  However, since it does not have a $1$ in the nth position, it will not be removed, a contradiction.
+  Hence, the set of all $x(a)$ is precisely the Cantor set.
+\end{solution}
+
 % Problem 3.20
-\setcounter{problem}{19}
 \begin{problem}
   Suppose $\{p_n\}$ is a Cauchy sequence in a metric space $X$, and some subsequence $\{p_{n_i}\}$ converges to a point $p \in X$.
   Prove that the full sequence $\{p_n\}$ converges to $p$.
