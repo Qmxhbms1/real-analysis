@@ -101,6 +101,46 @@
   \end{enumerate}
 \end{solution}
 
+% Problekm 3.9
+\setcounter{problem}{8}
+\begin{problem}
+  Find the radius of convergence of each of the following power series:
+  \begin{enumerate}[label=(\alph*)]
+    \item $\sum n^3 z^n$,
+    \item $\sum \frac{2^n}{n!} z^n$,
+    \item $\sum \frac{2^n}{n^2} z^n$,
+    \item $\sum \frac{n^3}{3^n} z^n$.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}[label=(\alph*)]
+    \item We have $\lim \sup \sqrt[n]{n^3} = (\lim \sqrt[n]{n})^3 = 1^3 = 1$.
+      Thus it follows that $\alpha = 1$ and thus $R = 1$.
+    \item Here we have $\lim \sup \frac{\frac{2^{n + 1}}{(n + 1)!}}{\frac{2^n}{n!}} = \lim \frac{2}{n + 1} = 0$.
+      Thus we also $R = \infty$.
+    \item We know that $\lim \sup \sqrt[n]{\frac{2^n}{n^2}} = \lim \sup 2 \frac{1}{\sqrt[n]{n}^2} = 2 \frac{1}{(\lim \sup \sqrt[n]{n})^2} = 2 \cdot 1 = 2$.
+      Hence, $R = \frac{1}{2}$.
+    \item Similarly we have $\lim \sup \sqrt[n]{\frac{n^3}{3^n}} = \lim \sup \frac{\sqrt[n]{n}^3}{3} = \frac{1}{3}$.
+      Thus $R = 3$.
+  \end{enumerate}
+\end{solution}
+
+% Problem 3.10
+\begin{problem}
+  Suppose that the coefficients of the power series $\sum a_n z^n$ are integers, infinitely many of which are distinct from zero.
+  Prove that the radius of convergence is at most $1$.
+\end{problem}
+
+\begin{solution}
+  For any sequence $a_n$ consider only the subsequence $a_{n_k}$ where $a_{n_k} \neq 0$ for any $n_k$.
+  It is clear that $\alpha_{n_k} = \alpha_{n}$
+  If we have two sequences $a_n$ and $b_n$ such that $a_n \ge b_n$ for all $n$, it follows that $R_a \le R_b$.
+  Notice that for any sequence of integers $a_n$ it follows that $a_n \ge b_n$ for $b_n = 1$.
+  The power series of $b_n$ is simply the geometric series which diverges for $|z| > 1$ and thus has $R = 1$.
+  Thus for every series of integers $a_n$ it follows that $R_a \le 1$.
+\end{solution}
+
 % Problem 3.14
 \setcounter{problem}{13}
 \begin{problem}
