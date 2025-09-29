@@ -60,7 +60,7 @@
   Using a similar argument we can show that $\lim\inf_{n \to \infty} s_{n} = \lim\inf_{n \to \infty} s_{2n} = \frac{1}{2}$.
 \end{solution}
 
-%Problem 3.5
+% Problem 3.5
 \begin{problem}
   For any two real sequences $\{a_n\}$, $\{b_n\}$, prove that
   \[\lim\sup_{n \to \infty} (a_n + b_n) \le \lim\sup_{n \to \infty} a_n + \lim\sup_{n \to \infty} b_n,\]
@@ -75,7 +75,7 @@
   Since we have excluded the case of $\infty - \infty$, these are all the posibilites and in all of the the stated theorem holds.
 \end{solution}
 
-%Problem 3.6
+% Problem 3.6
 \begin{problem}
   Investigate the behavior (convergence or divergence) of $\sum a_n$ if
   \begin{enumerate}[label=(\alph*)]
@@ -101,8 +101,20 @@
   \end{enumerate}
 \end{solution}
 
-% Problekm 3.9
-\setcounter{problem}{8}
+% Problem 3.7
+\begin{problem}
+  Prove that the convergence of $\sum a_n$ implies the convergence of
+  \[\sum \frac{\sqrt{a_n}}{n},\]
+  if $a_n \ge 0$.
+\end{problem}
+
+\begin{solution}
+  By the AM-GM inequality we have $\frac{\sqrt{a_n}}{n} \le \frac{1}{2} (a_n + \frac{1}{n^2})$.
+  Since both $\sum a_n$ and $\sum \frac{1}{n^2}$ converge, it follows that the right side of our inequality converges.
+  By the Comparison Test the series $\sum \frac{\sqrt{a_n}}{n}$ converges.
+\end{solution}
+
+% Problem 3.9
 \begin{problem}
   Find the radius of convergence of each of the following power series:
   \begin{enumerate}[label=(\alph*)]
