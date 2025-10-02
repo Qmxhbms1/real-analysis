@@ -114,6 +114,21 @@
   By the Comparison Test the series $\sum \frac{\sqrt{a_n}}{n}$ converges.
 \end{solution}
 
+% Problem 3.8
+\begin{problem}
+  If $\sum a_n$ converges, and if $\{b_n\}$ is monotonic and bounded, prove that $\sum a_n b_n$ converges.
+\end{problem}
+
+\begin{solution}
+  Put $\lim \sum a_n = a$.
+  By the Monotonic Convergence Theorem we know that $\lim_{n \to \infty} b_n = b$ for some $b$.
+  We also know that $\{b_n - b\}$ is a monotonic sequence which converges to $0$.
+  By Theorem 3.42 it is clear that $\sum a_n (b_n - b)$ converges, say to some value $c$.
+  Hence we know that $\sum a_n b_n - \sum a_n b = c$.
+  Thus we get that $\sum a_n b_n = b \cdot a + c$, and thus converges.
+
+\end{solution}
+
 % Problem 3.9
 \begin{problem}
   Find the radius of convergence of each of the following power series:
