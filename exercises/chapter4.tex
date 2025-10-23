@@ -1,0 +1,42 @@
+\section{Continuity}
+
+% Problem 4.1
+\begin{problem}
+  Suppose $f$ is a real function defined on $R^1$ which satisfies
+  \[\lim_{h \to 0} [f(x + h) - f(x - h)] = 0\]
+  for every $x \in \R^1$.
+  Does this imply that $f$ is continuous?
+\end{problem}
+
+\begin{solution}
+  No. Take the function
+  \[f(x) = \begin{cases} 1, \quad x \neq 0\\ 0, \quad x = 0 \end{cases}.\]
+  This function is not continuous because for $\lim_{x \to 0} = 1 \neq f(0)$.
+  On the other hand, it satisfies the given property, as we have $f(x + h) = f(x - h)$ and thus $\lim_{h \to 0} [f(x + h) - f(x - h)] = 0$, as long as $|h| < |x|$.
+\end{solution}
+
+% Problem 4.2
+\begin{problem}
+  If $f$ is a continuous mapping of a metric space $X$ into a metric space $Y$, prove that
+  \[f(\bar{E}) \subset \overline{f(E)}\]
+  for every set $E \subset X$.
+  Show, by an example, that $f(\bar{E})$ can be a proper subset of $\overline{f(E)}$.
+\end{problem}
+
+\begin{solution}
+  Fix a point $y \in f(\bar{E})$.
+  There exists some point $x \in \bar{E}$ such that $f(x) = y$.
+  If we have $x \in E$, then trivially $f(x) \in f(E) \subset \overline{f(E)}$.
+  Thus we assume that $x \notin E$ and $x$ is a limit point of $E$.
+  We wish to show that $y$ is then a limit point of $f(E)$.
+  Fix $\epsilon > 0$
+  Since $f$ is continuous we know that there exists a $\delta > 0$ such that $d_Y (y, f(x')) < \epsilon$ for all points $x'$ such that $d_X (x, x') < \delta$.
+  As $x$ is a limit point there must exist a point $x' \in E$ such that $d_X (x, x') < \delta$.
+  Hence $f(x') \in f(E)$ and $d_Y (y, f(x')) < \epsilon$.
+  Thus $y$ is a limit point of $f(E)$ and must be in the closure.
+
+  For an example consider the function $f : (0, 1) \to [0, 1]$, defined by $f(x) = x$.
+  Put $E = (0, 1)$.
+  Since $E$ is the entire metric space it must be closed, and thus clearly the image is the open set $(0, 1)$ in the metric space $[0, 1]$.
+  The closure of $(0, 1)$ in $[0, 1]$ is obviously $[0, 1]$ so we have that $f(\bar{E})$ is a proper subset of $\overline{f(E)}$ as we have $\{0, 1\} \subset [0, 1]$ and $\{0, 1\} \not\subset (0, 1)$.
+\end{solution}
