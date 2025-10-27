@@ -40,3 +40,73 @@
   Since $E$ is the entire metric space it must be closed, and thus clearly the image is the open set $(0, 1)$ in the metric space $[0, 1]$.
   The closure of $(0, 1)$ in $[0, 1]$ is obviously $[0, 1]$ so we have that $f(\bar{E})$ is a proper subset of $\overline{f(E)}$ as we have $\{0, 1\} \subset [0, 1]$ and $\{0, 1\} \not\subset (0, 1)$.
 \end{solution}
+
+% Problem 4.3
+\begin{problem}
+  Let $f$ be a continuous real function on a metric space $X$.
+  Let $Z(f)$ (the zero set of $f$) be the set of all $p \in X$ at which $f(p) = 0$.
+  Prove that $Z(f)$ is closed.
+\end{problem}
+
+\begin{solution}
+  This trivially follows from Theorem 4.8 and its corollary because the set $\{0\}$ is finite and thus closed in the real numbers with the usual topology.
+\end{solution}
+
+% Problem 4.4
+\begin{problem}
+  Let $f$ and $g$ be continuous mappings of a metric space $X$ into a metric space $Y$, and let $E$ be a dense subset of $X$.
+  Prove that $f(E)$ is dense in $f(x)$.
+  If $g(p) = f(p)$ for all $p \in E$, prove that $g(p) = f(p)$ for all $p \in X$.
+\end{problem}
+
+\begin{solution}
+  Fix some $f(x) \in Y$.
+  Since $E$ is dense in $X$ it follows that either $x \in E$ or $x$ is a limit point of $E$.
+  If $x \in E$ then obviously $f(x) \in f(E)$.
+  Now, assume that $x$ is a limit point of $E$.
+  We will show that $f(x)$ is a limit point of $f(E)$, i.e., for any $\epsilon > 0$ there is a point $f(x') \in f(E)$ such that $d_Y (f(x), f(x')) < \epsilon$.
+  Fix $\epsilon > 0$.
+  Since $f$ is continuous we know that there exists a $\delta > 0$ such that $d_Y (f(x), f(x')) < \epsilon$ when $d_X (x, x') < \delta$.
+  As $x$ is a limit point of $E$ there exists some $y \in E$ such that $d_X (x, y) < \delta$, hence $d_Y (f(x), f(y)) < \epsilon$.
+  Since it is clear that $f(y) \in f(E)$ and our $\epsilon$ was arbitrary it follows that $f(x)$ must be a limit point of $f(E)$.
+  Thus $f(E)$ is dense in $f(X)$.
+
+  Pick some $\epsilon > 0$ and some point $x \in X$.
+  There exists a $\delta_1$ such that $d_Y (f(x), f(y)) < \frac{\epsilon}{2}$ when $d_X (x, y) < \delta_1$.
+  Similarly there exists a $\delta_2$ such that $d_Y (g(x), g(y)) < \frac{\epsilon}{2}$ when $d_X (x, y) < \delta_2$.
+  Put $\delta = \min (\delta_1, \delta_2)$.
+  Take an $y \in E$ such that $d_X (x, y) < \delta$ so that both conditions above hold.
+  From there we see that $d_Y (f(x), g(x)) < d_Y (f(x), f(y)) + d_Y (g(x), g(y)) < \epsilon$.
+  Since we have $d_Y (f(x), g(x)) \ge 0$ by definition of a metric function and the above we can conclude that $d_Y (g(x), f(x)) = 0$.
+\end{solution}
+
+% Problem 4.5
+\begin{problem}
+  If $f$ is a real continuous function defined on a closed set $E \subset \R$, prove that there exist continuous real functions $g$ on $\R$ such that $g(x) = f(x)$ for all $x \in E$.
+  Show that the result becomes false if the word "closed" is ommited.
+  Extend the result to vector-valued functions.
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+% Problem 4.7
+\setcounter{problem}{6}
+\begin{problem}
+  If $E \subset X$ and if $f$ is a function defined on $X$, the restriction of $f$ to $E$ is the function $g$ whose domain of definition is $E$, such that $g(p) = f(p)$ for $p \in E$.
+  Define $f$ and $g$ on $\R^2$ by: $f(0, 0) = g(0, 0) = 0, f(x, y) = xy^2/(x^2 + y^4), g(x, y) = xy^2/(x^2 + y^6)$ if $(x, y) \neq (0, 0)$.
+  Prove htat $f$ is bounded on $R^2$, that $g$ is unbounded in every neighborhood of $(0, 0)$, and that $f$ is not continuous at $(0, 0)$; nevertheless, the restriction of both $f$ and $g$ to every straight line in $R^2$ are continuous!
+\end{problem}
+
+\begin{solution}
+  We have
+  \[\begin{aligned}
+    (x - y^2)^2 &\ge 0;\\
+    x^2 - 2xy^2 + y^4 &\ge 0;\\
+    x^2 + y^4 &\ge 2xy^2;\\
+    \frac{1}{2} &\ge \frac{xy^2}{x^2 + y^4}.
+  \end{aligned}\]
+  Thus we see that $f$ is bounded by $\frac{1}{2}$ since $x^2 + y^4 \neq 0$.
+
+  Fix some $\epsilon$-neighborhood of $(0, 0)$, i.e., let $x \le y < \epsilon$.
+\end{solution}
